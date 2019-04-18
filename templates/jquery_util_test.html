@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery-Util demo</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="helang.love@qq.com">
+    <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="/static/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="/static/assets/jQuery-Util.js"></script>
+    <!-- nprogress-->
+    <link rel="stylesheet" type="text/css" href="/static/loading/top_loading_progress/nprogress/nprogress.css">
+    <script type="text/javascript" src="/static/loading/top_loading_progress/nprogress/nprogress.js"></script>
+    <!-- topbar-->
+    <script type="text/javascript" src="/static/loading/top_loading_progress/topbar/topbar.js"></script>
+    <!-- loadBar-->
+    <script type="text/javascript" src="/static/loading/top_loading_progress/loadbar/jquery.loadBar.js"></script>
+    <!-- 按钮加载中动画 ladda-->
+    <link rel="stylesheet" href="/static/loading/ladda-bootstrap-master/dist/ladda-themeless.css">
+    <script src="/static/loading/ladda-bootstrap-master/dist/spin.js"></script>
+    <script src="/static/loading/ladda-bootstrap-master/dist/ladda.js"></script>
+    <!-- PerfectLoading组件-->
+    <script src="/static/loading/perfect-loading/PerfectLoading.js"></script>
+    <!-- loading组件-->
+    <link rel="stylesheet" href="/static/loading/loading/css/loading.css">
+    <script src="/static/loading/loading/js/loading.js"></script>
+    <!-- fakeLoader-->
+    <link rel="stylesheet" href="/static/loading/fakeLoader.js/fakeLoader.css">
+    <script src="/static/loading/fakeLoader.js/fakeLoader.js"></script>
+    <!-- sweetalert-->
+    <script src="/static/alert/sweetalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/alert/sweetalert/sweetalert.css">
+    <!-- jQueryZdialog-->
+    <link type="text/css" rel="stylesheet" href="/static/alert/jQueryZdialog/css/zdialog.css"/>
+    <script type="text/javascript" src="/static/alert/jQueryZdialog/js/zdialog.js"></script>
+    <!--moment.js-->
+    <script type="text/javascript" src="/static/datepicker/moment.js/moment.js"></script>
+    <!--dayjs-->
+    {#    <script src="https://unpkg.com/dayjs@1.7.7/dayjs.min.js"></script>#}
+    <script src="/static/datepicker/dayjs-master/dayjs.min.js"></script>
+    <!--bootstrap waitingfor-->
+    <script src="/static/loading/bootstrap-waitingfor-master/build/bootstrap-waitingfor.js"></script>
+
+    <!--bootstrap eModal-->
+    <script src="/static/alert/bootstrap_eModal-master/dist/eModal.js"></script>
+    <!--Bootstrap中文网提到的Messenger组件-->
+    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger.css"/>
+    {#    12345#}
+    {#    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger-theme-ice.css"/>#}
+    {#    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger-theme-block.css"/>#}
+    {#    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger-theme-flat.css"/>#}
+    {#    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger-theme-future.css"/>#}
+    <link type="text/css" rel="stylesheet" href="/static/alert/messenger-master/build/css/messenger-theme-air.css"/>
+    <script src="/static/alert/messenger-master/build/js/messenger.js"></script>
+
+    <!--validate-->
+    <script src="/static/formvalidate/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="/static/formvalidate/jquery-validation-1.17.0/dist/localization/messages_zh.js"></script>
+
+
+    <!--Simple Ajax Uploader 文件上传-->
+    <script src="/static/fileupload/Simple-Ajax-Uploader-master/SimpleAjaxUploader.js"></script>
+
+    <!--jQueryflexdatalist 自动完成插件-->
+    <link href="/static/autocomplete/jquery-flexdatalist-2.2.4/jquery.flexdatalist.css" rel="stylesheet"
+          type="text/css">
+    <script src="/static/autocomplete/jquery-flexdatalist-2.2.4/jquery.flexdatalist.js"></script>
+
+    <!--jquery.typeahead.js 自动完成插件-->
+    <link href="/static/autocomplete/jquery-typeahead-2.10.6/dist/jquery.typeahead.css" rel="stylesheet"
+          type="text/css">
+    <script src="/static/autocomplete/jquery-typeahead-2.10.6/dist/jquery.typeahead.js"></script>
+    <!--jquery.simpletree.js 树形菜单使用-->
+    <link href="/static/tree/jquery.simpletree/jquery.simple.tree.css" rel="stylesheet"
+          type="text/css">
+    <script src="/static/tree/jquery.simpletree/jquery.simple.tree.js"></script>
+    <!--jquery.ztree.js 树形菜单使用-->
+    <link href="/static/tree/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" rel="stylesheet"
+          type="text/css">
+    <script src="/static/tree/zTree_v3-master/js/jquery.ztree.core.js"></script>
+    <script src="/static/tree/zTree_v3-master/js/jquery.ztree.excheck.js"></script>
+    <script src="/static/tree/zTree_v3-master/js/jquery.ztree.exedit.js"></script>
+
+    <style type="text/css">
+        .panel-body.minHieht {
+            min-height: 100px;
+        }
+
+        .typeahead__container {
+            max-width: 500px;
+        }
+    </style>
+</head>
+<body>
+{# fakeLoader Include in the top of your <body> tag#}
+<div id="fakeLoader"></div>
+<div class="container">
+    <h2 class="text-primary">jQuery常用工具集 示例----<a href="https://github.com/wanghuisenior" target="_blank">我的github主页</a>
+    </h2>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">基于bootstrap封装的提示框</div>
+                <div class="panel-body minHieht">
+                    <div class="col-md-4">
+                        <h4><code>$.Util.bootstrapTip("提示内容")</code></h4>
+                        <button type="button" class="btn btn-success" onclick="bootstrapTip()">点我测试</button>
+                    </div>
+                    <div class="col-md-4">
+                        <h4><code>$.Util.bootstrapMsg("提示内容")</code></h4>
+                        <button type="button" class="btn btn-success" onclick="bootstrapMsg()">点我测试</button>
+                    </div>
+                    <div class="col-md-4">
+                        <h4><code>$.Util.bootstrapConfirm("提示内容",callback)</code></h4>
+                        <button type="button" class="btn btn-success" onclick="bootstrapConfirm()">点我测试</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">基本说明</div>
+                <div class="panel-body">
+                    <h3>使用方法：<code>$.Util.*</code></h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">获取浏览器类型</div>
+                <div class="panel-body minHieht">
+                    <h4><code>$.Util.getBrowser()</code></h4>
+                    <div>返回值:<code>"IE"，"IE6"，"IE7"，"IE8"，"Firefox"，"Opera"，"Chrome"</code></div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success" onclick="browser()">点我测试</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">判断浏览终端</div>
+                <div class="panel-body minHieht">
+                    <h4><code>$.Util.getTerminal()</code></h4>
+                    <div>返回值:<code>"android"，"iPad"，"iphone"，"mac"，"windows"，"mobileEnd"</code></div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success" onclick="terminal()">点我测试</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">获取随机数</div>
+                <div class="panel-body minHieht">
+                    <h4><code>$.Util.getRandomNumber(min,max)</code></h4>
+                    <div>必传参数：<code>"min:最小值,max:最大值"</code>最小值与最大值区间的随机数</div>
+                    <div>返回值：Number</div>
+                    <div>返回值：Number</div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success" onclick="getRandomNumber()">点我测试</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-6 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">浏览器对象常用操作</div>
+                <div class="panel-body minHieht">
+                    <h4><code>$.Util.win.*</code></h4>
+                    <div>* 可选方法 <code>href(url,time)，open(url,time)，back()，reload(time)</code></div>
+                    <div><span>href：窗口跳转地址</span>，<span>open：打开新窗口</span>，<span>back：后退</span>，<span>reload：刷新页面</span>
+                    </div>
+                    <div>必传参数：<code>"url"</code>地址栏链接地址，可传参数：<code>"time"</code>延迟毫秒数，默认为0</div>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="btn btn-success" onclick="winOpen()">打开新窗口</button>
+                    <button type="button" class="btn btn-success" onclick="winReload()">(2秒后)刷新当前页面</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">常用数据校验</div>
+                <div class="panel-body minHieht">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <h4><code>$.Util.verify(key,val)</code></h4>
+                            <div>必传参数：<code>"key:校验的类型,val:被校验的字符串"</code></div>
+                            <div>key 的可选值：
+                                <code>"email","mobile",,"legalUserName","legalPassword"</code><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <code>"isContainChinese","url","idCard","postal","date","qq"</code>
+                            </div>
+                            <div>返回值：Boolean</div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="inputData" class="col-sm-2 control-label">输入数据</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputData" name="inputData"
+                                               placeholder="请输入需要校验的数据"
+                                               value="154306777@qq.com">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="selectSex" class="col-sm-2 control-label">校验类型</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="selectRegType" name="selectRegType">
+                                            <option value="email">电子邮件</option>
+                                            <option value="mobile">手机号码</option>
+                                            <option value="legalUserName">用户名</option>
+                                            <option value="legalPassword">密码</option>
+                                            <option value="isContainChinese">是否包含中文</option>
+                                            <option value="url">合法url</option>
+                                            <option value="idCard">身份证号</option>
+                                            <option value="postal">邮编</option>
+                                            <option value="date">合法日期</option>
+                                            <option value="qq">QQ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="button" class="btn btn-success" onclick="verify()">点我校验</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">序列化表单数据为JSON格式(快速获取表单值)</div>
+                <div class="panel-body minHieht">
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <h4><code>$.Util.serializeJSON(obj)</code></h4>
+                            <div>必传参数：<code>表单form对象$("#loginForm")</code></div>
+                            <div>返回值：Json Object</div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <form class="form-horizontal" id="loginForm">
+                                <div class="form-group">
+                                    <label for="inputName" class="col-sm-2 control-label">name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputName" name="userName"
+                                               placeholder="用户名"
+                                               value="admin">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="selectSex" class="col-sm-2 control-label">sex</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" id="selectSex" name="userSex">
+                                            <option value="男">男</option>
+                                            <option value="女">女</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="rePwd" value="true">记住密码
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="button" class="btn btn-success" onclick="serializeJSON()">提交
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-primary">一些好用的三方库
+    </h2>
+    <div class="row">
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">全站进度条插件</div>
+                <div class="panel-body minHieht">
+                    <button type="button" class="btn btn-success" onclick="showNProgress(1)">NProgress基本用法</button>
+                    <button type="button" class="btn btn-success" onclick="showNProgress(2)">NProgress动态设置进度</button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="showTopbar(1)">展示topbar</button>
+                    <button type="button" class="btn btn-success" onclick="showTopbar(2)">关闭topbar</button>
+                    <button type="button" class="btn btn-success" onclick="showTopbar(3)">动态设置</button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="showTopbar(4)">loadBar</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">加载状态展示</div>
+                <div class="panel-body minHieht">
+                    <button id="form-submit" class="btn btn-primary btn-lg ladda-button" data-style="expand-right"
+                            data-size="l"><span
+                            class="ladda-label">Submit form</span></button>
+                    <button type="button" class="btn btn-success ladda-button" id="loadingButton"
+                            data-style="expand-right"
+                            onclick="showLoading()">加载中
+                    </button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="showPerfectLoading()">动态设置</button>
+                    <button type="button" class="btn btn-success" onclick="showLoading1()">动态设置</button>
+                    <button type="button" class="btn btn-success" onclick="showLoading2()">fakeLoader</button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="show_bootstrap_waitingfor(1)">waitingfor
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="show_bootstrap_waitingfor(2)">waitingfor
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="show_bootstrap_waitingfor(3)">waitingfor
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="show_bootstrap_waitingfor(4)">waitingfor
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading"> 提示框插件</div>
+                <div class="panel-body minHieht">
+                    <button type="button" class="btn btn-success" onclick="alert1()">sweetalert弹窗</button>
+                    <button type="button" class="btn btn-success" onclick="alert2()">jQueryZdialog弹窗</button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(1)">BS eModal简单弹窗</button>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(2)">BS eModal弹窗</button>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(3)">BS eModal ajax弹窗</button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(4)">BS eModal prompt弹窗</button>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(5)">BS eModal iframe弹窗</button>
+                    <button type="button" class="btn btn-success" onclick="bs_eMoadl(6)">BS eModal弹窗</button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="messenger(1)">Bootstrap中文网提到的Messenger组件
+                    </button>
+                    <button type="button" class="btn btn-success" onclick="messenger(2)">Messenger</button>
+                    <button type="button" class="btn btn-success" onclick="messenger(3)">Messenger</button>
+                    <button type="button" class="btn btn-success" onclick="messenger(4)">Messenger</button>
+                    <button type="button" class="btn btn-success" onclick="messenger(5)">Messenger
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">使用moment.js / dayjs 轻松管理日期和时间</div>
+                <div class="panel-body minHieht">
+                    <button type="button" class="btn btn-success" onclick="date_operator(1)">momentjs获取当前时间，并格式化
+                    </button>
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="date_operator(2)">dayjs获取当前时间，并格式化</button>
+                    <br><br>
+                    区别：用法差不多，dayjs比moment.js轻量一些
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">使用jQuery Validate 插件进行表单验证</div>
+                <div class="panel-body minHieht">
+                    <form class="form-horizontal" id="default_form">
+                        <div class="form-group">
+                            <label for="username" class="col-md-2 control-label">用户名</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_pwd" class="col-md-2 control-label">密码</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="form_pwd" name="form_pwd"
+                                       placeholder="请输入密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_confirm_pwd" class="col-md-2 control-label">确认密码</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="form_confirm_pwd" name="form_confirm_pwd"
+                                       placeholder="请重复密码">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_email" class="col-md-2 control-label">邮箱地址</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="form_email" name="form_email"
+                                       placeholder="请输入邮箱地址">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form_phone" class="col-md-2 control-label">手机号码</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="form_phone" name="form_phone"
+                                       placeholder="请输入手机号">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="rePwd" value="true">记住密码
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" class="btn">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">文件上传模块</div>
+                <div class="panel-body minHieht">
+                    <div class="container">
+                        <div class="page-header">
+                            <h3>Simple Ajax Uploader Basic Example</h3>
+                        </div>
+                        <div class="row" style="padding-top:10px;">
+                            <div class="col-xs-2">
+                                <button id="uploadBtn" class="btn btn-large btn-primary">选择文件</button>
+                            </div>
+                            <div class="col-xs-10">
+                                <div id="progressOuter" class="progress progress-striped active" style="display:none;">
+                                    <div id="progressBar" class="progress-bar progress-bar-success" role="progressbar"
+                                         aria-valuenow="45"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:10px;">
+                            <div class="col-xs-10">
+                                <div id="msgBox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">自动完成插件</div>
+                <div class="panel-body minHieht">
+                    <div class="input-group col-md-6">
+                        <span class="input-group-addon">jQueryflexdatalist 用户名</span>
+                        <input type="text" id="jQueryflexdatalist" class="form-control flexdatalist">
+                    </div>
+                    <div class="input-group col-md-6" style="padding-top: 10px">
+                        <form>
+                            <div class="typeahead__container">
+                                <div class="typeahead__field">
+                                    <div class="typeahead__query">
+                                        <input class="js-typeahead" name="q" type="search" autocomplete="off">
+                                    </div>
+                                    <div class="typeahead__button">
+                                        <button type="submit">
+                                            <span class="typeahead__search-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">树插件</div>
+                <div class="panel-body minHieht">
+                    <ul id="ztreeDemo" class="ztree"></ul>
+                    [ <a id="refreshNode" href="#" onclick="return false;">重新加载</a> ]
+                    [ <a id="addNode" href="#" onclick="return false;">追加</a> ]<br>
+                    <span class="text-danger">“悄悄地”操作只能针对 折叠状态 的父节点</span><br>
+                    [ <a id="refreshNodeSilent" href="#" onclick="return false;">悄悄地 重新加载</a> ]&nbsp;&nbsp;&nbsp;&nbsp;
+                    [ <a id="addNodeSilent" href="#" onclick="return false;">悄悄地 追加</a> ]
+                    <br>
+                    <span class="text-danger">updateNode 方法更新节点</span><br>
+                    [ <a id="rename" href="#" onclick="return false;">换名字</a> ]
+                    <br>
+                    单个节点(不包括子节点)--[ <a id="toggleBtn" href="#" onclick="return false;">展开 / 折叠 切换</a> ]<br>
+                    单个节点(包括子节点)--[ <a id="expandSonBtn" href="#" onclick="return false;">展开</a> ]
+                    [ <a id="collapseSonBtn" href="#" onclick="return false;">折叠</a> ]<br>
+                    全部节点--[ <a id="expandAllBtn" href="#" onclick="return false;">展开</a> ]
+                    &nbsp;&nbsp;&nbsp;&nbsp;[ <a id="collapseAllBtn" href="#" onclick="return false;">折叠</a> ]
+                    <br>[ <a id="getChecked" href="#" onclick="return false;">获取勾选数据</a> ]
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<div id="bs_modal_alert" class="modal" style="z-index:9999;display: none;">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span
+                        class="sr-only">Close</span>
+                </button>
+                <h5 class="modal-title"><i class="fa fa-exclamation-circle"></i> [Title]</h5>
+            </div>
+            <div class="modal-body small">
+                <p>[Message]</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary ok" data-dismiss="modal">[BtnOk]</button>
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">[BtnCancel]</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function bootstrapTip() {
+        $.Util.bootstrapTip('测试成功！')
+    }
+
+    function bootstrapMsg() {
+        $.Util.bootstrapMsg('点击确定按钮消失！')
+    }
+
+    function bootstrapConfirm() {
+        $.Util.bootstrapConfirm('确认执行操作吗！', function () {
+            alert('确定')
+        })
+    }
+
+    function browser() {
+        alert($.Util.getBrowser())
+    }
+
+    function terminal() {
+        alert($.Util.getTerminal())
+    }
+
+    function getRandomNumber() {
+        alert("10-100的随机数是：" + $.Util.getRandomNumber(10, 100))
+    }
+
+    function winOpen() {
+        $.Util.win.open("http://www.baidu.com");
+    }
+
+    function winReload() {
+        $.Util.win.reload(2000);
+    }
+
+    function verify() {
+        var regData = $('#inputData').val()
+        var regType = $('#selectRegType').val()
+        alert($.Util.verify(regType, regData))
+    }
+
+    function serializeJSON() {
+        var info = $.Util.serializeJSON($("#loginForm"));
+        alert(JSON.stringify(info));
+    }
+
+    function showNProgress(i) {
+        if (i == 1) {//两秒后自动消失
+            NProgress.start();
+            setTimeout(function () {
+                NProgress.done();
+            }, 2000)
+        } else if (i == 2) {//高级用法Percentages：设置一个进度百分比，调用 .set(n)，其中n的取值范围是0到1.0,
+            function setP(p) {
+                p++;
+                var t = setTimeout(function () {
+                    if (p <= 100) {
+                        NProgress.set(p / 100)
+                        setP(p);
+                    }
+                }, 100)
+            }
+
+            setP(20)
+        }
+    }
+
+    function showTopbar(i) {
+        switch (i) {
+            case 1:
+                topbar.show()
+                break;
+            case 2:
+                topbar.hide()
+                break;
+            case 3:
+                topbar.config({
+                    autoRun: false,
+                    barThickness: 5,
+                    barColors: {
+                        '0': 'rgba(26,  188, 156, .7)',
+                        '.3': 'rgba(41,  128, 185, .7)',
+                        '1.0': 'rgba(231, 76,  60,  .7)'
+                    },
+                    shadowBlur: 5,
+                    shadowColor: 'rgba(0, 0, 0, .5)'
+                })
+                topbar.show();
+                (function step() {
+                    console.log('top', topbar.progress())
+                    setTimeout(function () {
+                        if (topbar.progress('+.01') < 1) step()
+                    }, 20)
+                })()
+                break;
+            case 4:
+                // main color
+                loadBar.mainColor = 'red';
+
+                // strip color
+                loadBar.stripColor = 'green';
+
+                // animation speed
+                loadBar.barSpeed = 5;
+
+                // bar height
+                loadBar.barHeight = 5;
+                loadBar.trigger('show');
+                setTimeout(function () {
+                    loadBar.trigger('hide');
+                }, 2000);
+                break;
+        }
+    }
+
+    function showLoading() {
+        var l = Ladda.create(document.querySelector('#loadingButton'));
+        l.start();
+        l.setProgress(0.8);
+        //ajax调用完毕后停止
+        setTimeout(function () {
+            l.stop()
+        }, 2000)
+    }
+
+    $('#form-submit').click(function (e) {
+        e.preventDefault();
+        var l = Ladda.create(this);
+        l.start();
+        $.post("your-url",
+            {data: {}},
+            function (response) {
+                console.log(response);
+            }, "json")
+            .always(function () {
+                l.stop();
+            });
+        return false;
+    });
+
+    function showPerfectLoading() {
+        $.bootstrapLoading.start({loadingTips: "正在处理数据，请稍候..."});
+        //ajax
+        setTimeout(function () {
+            $.bootstrapLoading.end();
+        }, 1000)
+    }
+
+    function showLoading1() {
+        $('body').loading({
+            loadingWidth: 240,
+            title: '请稍等!',
+            name: 'test',
+            discription: '描述描述描述描述',
+            direction: 'column',
+            type: 'origin',
+            // originBg:'#71EA71',
+            originDivWidth: 40,
+            originDivHeight: 40,
+            originWidth: 6,
+            originHeight: 6,
+            smallLoading: false,
+            loadingMaskBg: 'rgba(0,0,0,0.2)'
+        });
+
+        setTimeout(function () {
+            removeLoading('test');
+        }, 3000);
+    }
+
+    function showLoading2() {
+        //$("#fakeLoader").fakeLoader();// 默认的
+        //自定义
+        //https://github.com/joaopereirawd/fakeLoader.js
+        $("#fakeLoader").fakeLoader({
+            timeToHide: 1200, //Time in milliseconds for fakeLoader disappear
+            zIndex: 999, // Default zIndex
+            spinner: "spinner2",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+            bgColor: "#2ecc71", //Hex, RGB or RGBA colors
+            //imagePath: "yourPath/customizedImage.gif" //If you want can you insert your custom image
+        });
+    }
+
+    function show_bootstrap_waitingfor(i) {
+        switch (i) {
+            case 1:
+                waitingDialog.show();
+                setTimeout(function () {
+                    waitingDialog.hide();
+                }, 2000);
+                break;
+            case 2:
+                waitingDialog.show('自定义提示内容');
+                setTimeout(function () {
+                    waitingDialog.hide();
+                }, 2000);
+                break;
+            case 3:
+                waitingDialog.show('自定义提示内容', {dialogSize: 'sm', progressType: 'warning'});
+                setTimeout(function () {
+                    waitingDialog.hide();
+                }, 2000);
+                break;
+            case 4:
+                waitingDialog.show('隐藏后回调', {
+                    onHide: function () {
+                        alert('Callback!');
+                    }
+                });
+                setTimeout(function () {
+                    waitingDialog.hide();
+                }, 2000);
+                break;
+        }
+    }
+
+    function alert1() {
+        swal("这是一条alert消息");
+    }
+
+    function alert2() {
+        //$.DialogByZ.Loading('image/loading.png')
+        $.DialogByZ.Alert({Title: "提示", Content: "您的请求失败", BtnL: "确定", FunL: alerts})
+        //$.DialogByZ.Confirm({Title: "", Content: "自动隐藏提示Tips弹窗插件</br>代码少使用方便", FunL: confirmL, FunR: Immediate})
+        //$.DialogByZ.Autofade({Content: "感谢您对我们的支持"})
+    }
+
+    function bs_eMoadl(index) {
+        //use eModal to display a modal for alert, ajax, prompt, confirm or iframe
+
+        switch (index) {
+            case 1:
+                eModal.alert('使用alert未通过验证！');
+                break;
+            case 2:
+                eModal.confirm('确认吗confirm?', '自定义标题')
+                    .then(function () {
+                        alert('确认咯')
+                    }, function () {
+                        alert('取消了')
+                    });
+                break;
+            case 3:
+                //使用ajax加载内容，加载成功，则显示加载出的内容，加载失败，显示错误信息
+                //eModal.ajax('/jquery_util_ajx_test', '我是ajax标题')
+                //    .then(function (ajaxOnLoadCallback, a, b) {
+                //       console.log(ajaxOnLoadCallback)
+                //       alert('ajaxOnLoadCallback')
+                //    });
+
+                var options = {
+                    url: "jquery_util_ajx_test",
+                    title: 'Header title',
+                    size: eModal.size.sm,
+                    subtitle: 'smaller text header',
+                    buttons: [
+                        {
+                            text: 'OK', style: 'info', close: true, click: function () {
+                                console.log('AAAAAAAAAAAA')
+                            }
+                        },
+                        {
+                            text: 'KO', style: 'danger', close: true, click: function () {
+                                console.log('BBBBBBBBBBB')
+                            }
+                        }
+                    ],
+                };
+
+                eModal.ajax(options);
+                break;
+            case 4:
+                eModal.prompt('prompt使用', '输入密码')
+                break;
+            case 5:
+                eModal.iframe('https://www.baidu.com/', 'iframe标题')
+                break;
+            case 6:
+                eModal.setEModalOptions({
+                    //loadingHtml: '<span class="fa fa-circle-o-notch fa-spin fa-3x text-primary"></span><span class="h4">Loading</span>',
+                    loadingHtml: '<p><i class="fa fa-spin fa-spinner"></i> Loading...</p>',
+                });
+                eModal.ajax('/jquery_util_ajx_test', '我是ajax标题')
+                    .then(function (ajaxOnLoadCallback, a, b) {
+                        console.log(ajaxOnLoadCallback)
+                        alert('ajaxOnLoadCallback')
+                    });
+                break;
+        }
+    }
+
+    function confirmL() {
+        $.DialogByZ.Close();
+        $.DialogByZ.Alert({Title: "提示", Content: "您要求稍后开通", BtnL: "确定"})
+    }
+
+    function alerts() {
+
+        $.DialogByZ.Close();
+    }
+
+    function Immediate() {
+        //location.href="http://www.baidu.com"
+        // window.open("http://www.baidu.com")
+        alert("取消");
+    }
+
+    Messenger.options = {
+        extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right',
+        //12345
+        //必须和导入的css文件一一对应
+        theme: 'air' // ice block flat future air
+    }
+
+    function messenger(i) {
+        //更改样式，请更改引入的css文件
+        switch (i) {
+            case 1:
+                Messenger().post("请求成功!")
+                break;
+            case 2:
+                Messenger().post({
+                    message: "请求失败",//提示信息
+                    type: 'error',//消息类型。error、info、success
+                    hideAfter: 1,//多长时间消失
+                    showCloseButton: true,//是否显示关闭按钮
+                    hideOnNavigate: true //是否隐藏导航
+                });
+
+                break;
+            case 3:
+                var msg;
+                msg = Messenger().post({
+                    message: '正在加载数据...',
+                    type: 'info',
+                    hideAfter: 2,//多长时间消失
+                    actions: {
+                        cancel: {
+                            label: '取消',
+                            action: function () {
+                                return msg.update({
+                                    message: '已取消！',
+                                    type: 'success',
+                                    actions: false
+                                });
+                            }
+                        }
+                    }
+                });
+
+                break;
+            case 4:
+                var i;
+                i = 0;
+                Messenger().run({
+                    errorMessage: 'Error destroying alien planet',
+                    successMessage: 'Alien planet destroyed!',
+                    action: function (opts) {
+                        if (++i < 3) {
+                            return opts.error({
+                                status: 500,
+                                readyState: 0,
+                                responseText: 0
+                            });
+                        } else {
+                            return opts.success();
+                        }
+                    }
+                });
+
+                break;
+        }
+    }
+
+    function date_operator(i) {
+        switch (i) {
+            case 1:
+                console.log('获取当前时间对象', moment())
+                console.log('转化为Date对象', moment().toDate())
+                console.log('获取当前时间，并格式化', moment().format('YYYY-MM-DD HH:mm:ss'))
+                console.log('获取当前时间，并格式化', moment().format('YYYY年MM月DD日 HH:mm:ss'))
+                moment().hour() // 小时
+                moment().date() // 一个月里的第几天
+                moment().day() // 星期几
+                moment().dayOfYear() // 一年里的第几天
+                moment().week() // 一年里的第几周
+                moment().month() // 第几个月
+                moment().quarter() // 一年里的第几个季度
+                moment().year() // 年
+                moment().daysInMonth() // 当前月有多少天
+                moment().format('YYYY-MM')// 只获取年月
+                //操作
+                moment().add(7, 'days') // 之后的第7天。第2个参数还可以是 'months', 'years' 等。注意是复数。
+                moment().add(7, 'd')// 与上面一行代码的运行结果一样。
+                moment().subtract(1, 'months') // 上个月
+                moment().startOf('week') // 这周的第一天
+                moment().endOf('week')// 这周的最后一天
+                //======》创建moment对象
+                var t = moment("2018-10-31");
+                console.log(t.fromNow())
+                console.log(t.format('YYYY-MM-DD HH:mm:ss'), '前一个月', t.subtract(1, 'months').format('YYYY-MM-DD HH:mm:ss'))
+                //查询
+                // 早于
+                moment('2010-10-20').isBefore('2010-10-21') // true
+                moment('2010-10-20').isBefore('2010-12-31', 'year') // false
+                moment('2010-10-20').isBefore('2011-01-01', 'year') // true
+
+                // 是否相等
+                moment('2010-10-20').isSame('2010-10-20') // true
+                moment('2010-10-20').isSame('2009-12-31', 'year')  // false
+                moment('2010-10-20').isSame('2010-01-01', 'year')  // true
+
+                // 晚于
+                moment('2010-10-20').isAfter('2010-10-19') // true
+                moment('2010-10-20').isAfter('2010-01-01', 'year') // false
+                moment('2010-10-20').isAfter('2009-12-31', 'year') // true
+
+                // 是否在时间范围内
+                moment('2010-10-20').isBetween('2010-10-19', '2010-10-25') // true
+                moment('2010-10-20').isBetween('2010-01-01', '2012-01-01', 'year') // false
+                moment('2010-10-20').isBetween('2009-12-31', '2012-01-01', 'year') // true
+
+                moment().isLeapYear() // 是否是闰年
+                break;
+            case 2:
+                //使用day.js处理时间
+                // https://github.com/iamkun/dayjs/blob/master/docs/zh-cn/API-reference.md
+
+                //直接运行 dayjs()，得到包含当前时间和日期的 Dayjs 对象。
+                console.log('直接运行 dayjs()，得到包含当前时间和日期的 Dayjs 对象', dayjs())
+                //可以解析传入的一个标准的ISO 8601时间字符串,并转化未dayjs对象。
+                console.log('可以解析传入的一个标准的ISO 8601时间字符串', dayjs("1995-12-25"))
+                //可以解析传入的一个 Javascript Date 对象。
+                console.log('可以解析传入的一个 Javascript Date 对象', dayjs(new Date(2018, 8, 18)))
+                //检测当前 Dayjs 对象是否是一个有效的时间
+                console.log('检测当前 Dayjs 对象是否是一个有效的时间', dayjs().isValid())
+                //=====================================================================
+
+                //获取和改变日期。
+                console.log('获取年份：', dayjs().year(), '获取月份：', dayjs().month(), '获取日期：', dayjs().date())
+                console.log('获取星期：', dayjs().day(), '获取小时：', dayjs().hour(), '获取分钟：', dayjs().minute(), '获取秒:', dayjs().second(), '毫秒', dayjs().millisecond())
+                //设置
+
+                //设置时间 传入的单位 (unit) 对大小写不敏感。
+
+                //dayjs().set(unit : String, value : Int);
+                //dayjs().set('date', 1);
+                //dayjs().set('month', 3); // 四月
+                //dayjs().set('second', 30);
+                //可用单位
+
+                //单位  缩写  描述
+                //date    日期
+                //day d 星期几 (星期天 0, 星期六 6)
+                //month M 月
+                //year  y 年
+                //hour  h 时
+                //minute  m 分
+                //second  s 秒
+                //millisecond ms  毫秒
+                //操作
+
+                //您可以对 Dayjs 对象如下增加减少之类的操作：
+                //console.log(dayjs().startOf('month').add(1, 'day').subtract(1, 'year').format('YYYY-MM-DD'))
+                //增加时间并返回一个新的 Dayjs() 对象。
+                //dayjs().add(value : Number, unit : String);
+                //dayjs().add(7, 'day');
+                //减少时间并返回一个新的 Dayjs() 对象，使用方法和 dayjs#add 相同。
+                //dayjs().subtract(7, 'year');
+                //开头时间 : 返回当前时间的开头时间的 Dayjs() 对象，如月份的第一天。
+                //dayjs().startOf('year');
+                //末尾时间:  返回当前时间的末尾时间的 Dayjs() 对象，如月份的最后一天。
+                //dayjs().endOf('month');
+
+                //格式化
+                //dayjs().format(String);
+                //Format  Output  Description
+                //YY  18  两位数的年份
+                //YYYY  2018  四位数的年份
+                //M 1-12  月份，从 1 开始
+                //MM  01-12 月份，两位数
+                //MMM Jan-Dec 简写的月份名称
+                //MMMM  January-December  完整的月份名称
+                //D 1-31  月份里的一天
+                //DD  01-31 月份里的一天，两位数
+                //d 0-6 一周中的一天，星期天是 0
+                //dd  Su-Sa 最简写的一周中一天的名称
+                //ddd Sun-Sat 简写的一周中一天的名称
+                //dddd  Sunday-Saturday 一周中一天的名称
+                //H 0-23  小时
+                //HH  00-23 小时，两位数
+                //m 0-59  分钟
+                //mm  00-59 分钟，两位数
+                //s 0-59  秒
+                //ss  00-59 秒 两位数
+                //SSS 000-999 秒 三位数
+                //Z +5:00 UTC 的偏移量
+                //ZZ  +0500 UTC 的偏移量，数字前面加上 0
+                //A AM PM
+                //a am pm
+
+                //时间差
+                //获取两个 Dayjs 对象的时间差，默认毫秒。
+                const date1 = dayjs('2019-01-25');
+                const date2 = dayjs('2018-06-05');
+                date1.diff(date2); // 20214000000
+                date1.diff(date2, 'month'); // 7
+                date1.diff(date2, 'month', true); // 7.645161290322581
+                date1.diff(date2, 'day'); // 233
+
+                //返回月份的天数。
+                dayjs().daysInMonth();
+                //返回原生的 Date 对象。
+                dayjs().toDate();
+
+                //当序列化 Dayjs 对象时，会返回 ISO8601 格式的字符串。
+                dayjs().toJSON(); //"2018-08-08T00:00:00.000Z"
+
+                //返回包含时间数值的对象。
+                dayjs().toObject();// { years:2018, months:8, date:18, hours:0, minutes:0, seconds:0, milliseconds:0}
+
+
+                //查询
+                //检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之前。
+                //dayjs().isBefore(Dayjs);
+                dayjs().isBefore(dayjs()); // false
+
+                //检查一个 Dayjs 对象是否和另一个 Dayjs 对象时间相同。
+
+                //dayjs().isSame(Dayjs);
+                dayjs().isSame(dayjs()); // true
+
+                //检查一个 Dayjs 对象是否在另一个 Dayjs 对象时间之后。
+                //dayjs().isAfter(Dayjs);
+                dayjs().isAfter(dayjs()); // false
+
+                //返回一个 boolean 验证传入值是否是一个 Dayjs 对象.
+                dayjs.isDayjs(dayjs()); // true
+                dayjs.isDayjs(new Date()); // false
+
+                //是否是闰年
+                // .isLeapYear 获得是否闰年
+
+                // .week 获取是第几个周
+
+                // .isBetween 返回一个时间是否介于两个时间之间
+
+                break;
+        }
+
+    }
+
+
+    $.validator.setDefaults({
+        submitHandler: function () {
+            alert("提交事件!");
+        }
+    });
+    $().ready(function () {
+// 在键盘按下并释放及提交后验证提交表单
+        $("#default_form").validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 4,
+                    remote: {
+                        url: "{% url 'test_user_available' %}",     //后台处理程序
+                        type: "get",               //数据发送方式
+                        dataType: "json",           //接受数据格式
+                        data: {                     //要传递的数据
+                            username: function () {
+                                return $("#username").val();
+                            }
+                        },
+                        dataFilter: function (data) {  //判断控制器返回的内容
+                            var obj = eval("(" + data + ")");
+                            if (obj.valid) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        }
+                    },
+                },
+                form_pwd: {
+                    required: true,
+                    minlength: 5
+                },
+                form_confirm_pwd: {
+                    required: true,
+                    minlength: 5,
+                    equalTo: "#form_pwd"
+                },
+                form_email: {
+                    required: true,
+                    email: true
+                },
+                form_phone: {
+                    required: true,
+                    minlength: 11,
+                    maxlength: 11,
+                    isphoneNum: true
+                }
+
+            },
+            messages: { //自定义提示信息，可选项  默认有提示(输入框为空时提示自定义信息)
+                form_username: {
+                    required: "请输入用户名哈哈哈",
+                    minlength: "用户名必需由4个字母组成,黑恶合法",
+                    remote: "*该账号已经被注册！"
+                },
+                form_pwd: {
+                    required: "请输入密码444",
+                    minlength: "密码长度不能小于 5 个字母有有有"
+                },
+                form_confirm_pwd: {
+                    required: "请输入密码aaaaaa",
+                    minlength: "密码长度不能小于 5 个字母",
+                    equalTo: "两次密码输入不dafd一致"
+                },
+                email: "请输入一个正确的邮箱",
+            }
+        });
+    });
+    //自定义手机号验证
+    jQuery.validator.addMethod("isphoneNum", function (value, element) {
+        var length = value.length;
+        var mobile = /^1[3|5|8]{1}[0-9]{9}$/;
+        //var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+        return this.optional(element) || (length == 11 && mobile.test(value));
+    }, "请正确填写您的手机号码");
+
+    /**
+     * Simple Ajax Uploader 文件上传开始
+     */
+    function escapeTags(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
+    }
+
+    var btn = document.getElementById('uploadBtn'),
+        progressBar = document.getElementById('progressBar'),
+        progressOuter = document.getElementById('progressOuter'),
+        msgBox = document.getElementById('msgBox');
+
+    var uploader = new ss.SimpleUpload({
+        debug: true,
+        button: btn,
+        url: '{% url 'jquery_util_ajax_fileupload' %}',
+        name: 'uploadfile',
+        multipart: true,
+        hoverClass: 'hover',
+        focusClass: 'focus',
+        responseType: 'json',
+        startXHR: function () {
+            progressOuter.style.display = 'block'; // make progress bar visible
+            this.setProgressBar(progressBar);
+        },
+        onSubmit: function () {
+            msgBox.innerHTML = ''; // empty the message box
+            btn.innerHTML = 'Uploading...'; // change button text to "Uploading..."
+        },
+        onComplete: function (filename, response) {
+            btn.innerHTML = 'Choose Another File';
+            progressOuter.style.display = 'none'; // hide progress bar when upload is completed
+
+            if (!response) {
+                msgBox.innerHTML = 'Unable to upload file';
+                return;
+            }
+
+            if (response.success === true) {
+                msgBox.innerHTML = '<strong>' + escapeTags(filename) + '</strong>' + ' successfully uploaded.';
+
+            } else {
+                if (response.msg) {
+                    msgBox.innerHTML = escapeTags(response.msg);
+
+                } else {
+                    msgBox.innerHTML = 'An error occurred and the upload failed.';
+                }
+            }
+        },
+        onError: function () {
+            progressOuter.style.display = 'none';
+            msgBox.innerHTML = 'Unable to upload file';
+        }
+    });
+
+    /**
+     * Simple Ajax Uploader 文件上传结束
+     */
+    /**
+     * jQueryflexdatalist开始
+     */
+    $('#jQueryflexdatalist').flexdatalist({
+        url: '{% url 'get_user_names' %}',
+        requestType: 'get',
+        minLength: 1,//至少输入1个字符才会触发查询
+        noResultsText: '找不到包含 {keyword} 的字符串',
+        searchContain: true, //默认为false：只查询以输入值开头匹配的数据（startwith），设置为true：只要包含输入值就返回（contain）
+        textProperty: '{user_name}, {user_email}', //选中某条结果后，文本框填入的内容
+        //multiple:true,//是否支持多选
+        //valueProperty: 'user_id',
+        visibleProperties: ["user_name", "user_tel", "user_email"],//查询到的下拉框中显示的字段的值
+        searchIn: 'user_name', //去查询结果列表中查询哪个key的值，默认为label
+        searchDelay: 300, //延迟执行，默认为300
+        valuesSeparator: '.',//分隔符，默认为逗号
+    }).on('change:flexdatalist', function (e, s, o) {
+        console.log('aaa', s)
+        console.log('bbb', o)
+    }).on('after:flexdatalist.search', function (event, keyword, result, matched_items) {
+        console.log('result', result)
+        console.log('matched_items', matched_items)
+    }).on('show:flexdatalist.results', function (event, data) {
+
+        console.log('aaaaa', data)
+    });
+    /**
+     * jQueryflexdatalist结束
+     */
+    /**
+     * jquery.typeahead.js开始
+     */
+    $.typeahead({
+        input: '.js-typeahead',
+        minLength: 0,
+        order: "asc",
+        dynamic: true,
+        delay: 500,
+        hint: true,
+        //highlight:'any',
+        backdrop: {
+            "background-color": "#fff"
+        },
+        //emptyTemplate: "no result for {{query}}",
+        template: function (q, item) {
+            return '<span><small style="color: #ff1493;">' + item.user_name + '</small></span>'
+        },
+        emptyTemplate: function (q) {
+            return 'no result for ' + '<span><small style="color: #ff1493;">' + q + '</small></span>'
+        },
+        source: {
+            user: {
+                display: "user_name",//这个属性用来匹配返回的json中该属性key对应的数据
+                data: function () {
+                    var deferred = $.Deferred(),
+                        query = this.query;
+                    $.getJSON('{%  url 'get_user_names' %}', {q: query},
+                        function (data) {
+                            console.log('____')
+                            console.log(data)
+                            console.log('____')
+                            deferred.resolve(data)
+                        }
+                    )
+                    return deferred;
+                }
+            },
+        },
+        callback: {
+            onClick: function (node, a, item, event) {
+
+                // You can do a simple window.location of the item.href
+                alert(JSON.stringify(item));
+
+            },
+            onSendRequest: function (node, query) {
+                console.log('request is sent')
+            },
+            onReceiveRequest: function (node, query) {
+                console.log('request is received')
+            }
+        },
+        debug: true
+    });
+    //ztree
+    var zNodes1 = [
+        {
+            name: "父节点1", open: true, children: [
+                {name: "子节点1"}, {name: "子节点2"}]
+        },
+        {
+            name: "父节点2", open: false, children: [
+                {name: "子节点2"}, {name: "子节点2"}]
+        }
+    ];
+    var setting = {
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+    var zNodes2 = [
+        {id: 1, pId: 0, name: "父节点1 - 展开", open: true},
+        {id: 11, pId: 1, name: "父节点11 - 展开", open: true},
+        {id: 111, pId: 11, name: "叶子节点111"},
+        {id: 112, pId: 11, name: "叶子节点112"},
+        {id: 113, pId: 11, name: "叶子节点113"},
+        {id: 114, pId: 11, name: "叶子节点114"},
+        {id: 12, pId: 1, name: "父节点12 - 折叠"},
+        {id: 121, pId: 12, name: "叶子节点121"},
+        {id: 122, pId: 12, name: "叶子节点122"},
+        {id: 123, pId: 12, name: "叶子节点123"},
+        {id: 124, pId: 12, name: "叶子节点124"},
+        {id: 13, pId: 1, name: "父节点13 - 没有子节点", isParent: true},
+        {id: 3, pId: 0, name: "父节点3 - 没有子节点", isParent: true}
+    ];
+    //参数1： dom ul节点，参数2： setting 配置，参数3：数据
+    //标准json数据
+    //$.fn.zTree.init($("#ztreeDemo"), {}, zNodes1);
+    //简单json数据：
+    /**
+     *直接加载数据
+     *
+     *
+
+     $.fn.zTree.init($("#ztreetest"), {
+        data: {
+            simpleData: { //使用简单json加载方式
+                enable: true
+            }
+        },
+        view: { //不显示连接线
+            showLine: false
+        },
+    }, zNodes2);
+     */
+
+    /**
+     * 异步加载数据
+     */
+    var log, className = "dark";
+    $.fn.zTree.init($("#ztreeDemo"), {
+        view: {
+            addHoverDom: function (treeId, treeNode) {
+                var newCount = 1;
+                var sObj = $("#" + treeNode.tId + "_span");
+                if (treeNode.editNameFlag || $("#addBtn_" + treeNode.tId).length > 0) return;
+                var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+                    + "' title='add node111' onfocus='this.blur();'></span>";
+                sObj.after(addStr);
+                var btn = $("#addBtn_" + treeNode.tId);
+                if (btn) btn.bind("click", function () {
+                    var zTree = $.fn.zTree.getZTreeObj("ztreeDemo");
+                    zTree.addNodes(treeNode, {id: (100 + newCount), pId: treeNode.id, name: "new node" + (newCount++)});
+                    return false;
+                });
+            },
+            removeHoverDom: function (treeId, treeNode) {
+                $("#addBtn_" + treeNode.tId).unbind().remove();
+            },
+            selectedMulti: false,
+            dblClickExpand: false,//是否启用双击隐藏
+            showLine: true, //是否启用连接线
+        },
+        check: {
+            enable: true //显示复选框,需要引入jquery.ztree.excheck.js
+        },
+        edit: {
+            enable: true,//支持编辑模式，需引入jquery.ztree.exedit.js
+            editNameSelectAll: true,
+            showRemoveBtn: function (treeId, treeNode) {
+                //return !treeNode.isFirstNode; //不能删除最顶端的节点
+                return true;
+            },
+            showRenameBtn: function (treeId, treeNode) {
+                //return !treeNode.isLastNode;//不能重命名最后一个节点
+                return true;
+            },
+            showDeleteBtn: function () {
+                return true;
+            }
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+
+        async: {
+            enable: true,
+            url: 'get_ztree_nodes',
+            autoParam: ["id", "name=n", "level=lv"],
+            otherParam: {"zTreeIsLoad": "false"}, //防止异步加载设置isParent:true后没有子节点的父节点循环加载整棵树
+            //dataFilter: filter
+        },
+        callback: {
+            beforeClick: function (treeId, treeNode) {
+                console.log('beforeClick')
+                /**
+                 *
+                 if (!treeNode.isParent) {
+                    alert("请选择父节点");
+                    return false;
+                } else {
+                    return true;
+                }
+                 */
+            },
+
+            beforeAsync: function (treeId) {
+                console.log('beforeAsync', treeId)
+            },
+            onAsyncSuccess: function (event, treeId, treeNode, result) {
+                console.log('onAsyncSuccess', treeId)
+                //防止异步加载设置isParent:true后没有子节点的父节点循环加载整棵树
+                var treeObj = $.fn.zTree.getZTreeObj(treeId);
+                treeObj.setting.async.otherParam = {"zTreeIsLoad": true};
+            },
+            onAsyncError: function (event, treeId, treeNode, XMLHttpRequest, textStatus, errorThrown) {
+                console.log('onAsyncError')
+            },
+            onClick: function (event, treeId, treeNode, clickFlag) {
+                //按住ctrl键可以进行多选，是否多选的状态为clickFlag
+                console.log('onClick', treeNode)
+                //zTree 默认不提供单击展开节点的功能，但可以利用 onClick 事件回调函数轻松实现此功能
+                //为了避免与双击功能冲突，建议关闭双击展开节点的功能，请设置 setting.view.dblClickExpand = false
+                var zTree = $.fn.zTree.getZTreeObj("ztreeDemo");
+                zTree.expandNode(treeNode);
+            },
+            beforeDrag: function (treeId, treeNodes) {
+                return true;
+            },
+            beforeEditName: function (treeId, treeNode) {
+                var zTree = $.fn.zTree.getZTreeObj("ztreeDemo");
+                zTree.selectNode(treeNode);
+                setTimeout(function () {
+                    if (confirm("进入节点 -- " + treeNode.name + " 的编辑状态吗？")) {
+                        setTimeout(function () {
+                            zTree.editName(treeNode);
+                        }, 0);
+                    }
+                }, 0);
+                return false;
+            },
+            beforeRemove: function (treeId, treeNode) {
+                var zTree = $.fn.zTree.getZTreeObj("ztreeDemo");
+                zTree.selectNode(treeNode);
+                return confirm("确认删除 节点 -- " + treeNode.name + " 吗？");
+            },
+            beforeRename: function (treeId, treeNode, newName) {
+                if (newName.length == 0) {
+                    setTimeout(function () {
+                        var zTree = $.fn.zTree.getZTreeObj("ztreeDemo");
+                        zTree.cancelEditName();
+                        alert("节点名称不能为空.");
+                    }, 0);
+                    return false;
+                }
+                return true;
+            },
+            onRemove: function (e, treeId, treeNode) {
+                console.log('onRemove')
+            },
+            onRename: function (e, treeId, treeNode) {
+                console.log('onRename', treeNode)
+            },
+        }
+    });
+
+    function refreshNode(e) {
+        var zTree = $.fn.zTree.getZTreeObj("ztreeDemo"),
+            type = e.data.type,
+            silent = e.data.silent,
+            nodes = zTree.getSelectedNodes();
+        if (nodes.length == 0) {
+            alert("请先选择一个父节点");
+        }
+        for (var i = 0, l = nodes.length; i < l; i++) {
+            zTree.reAsyncChildNodes(nodes[i], type, silent);
+            if (!silent) zTree.selectNode(nodes[i]);
+        }
+    }
+
+    function updateNode(e) {
+        var nameCount = 0, iconCount = 1
+        var zTree = $.fn.zTree.getZTreeObj("ztreeDemo"),
+            type = e.data.type,
+            nodes = zTree.getSelectedNodes();
+        if (nodes.length == 0) {
+            alert("请先选择一个节点");
+        }
+        for (var i = 0, l = nodes.length; i < l; i++) {
+            zTree.setting.view.fontCss = {};
+            if (type == "rename") {
+                nodes[i].name = nodes[i].name.replace(/_[\d]*$/g, "") + "_" + (nameCount++);
+            } else if (type == "icon") {
+                if (iconCount > 8) {
+                    nodes[i].iconSkin = null;
+                    iconCount = 1;
+                } else if (nodes[i].isParent) {
+                    nodes[i].iconSkin = nodes[i].iconSkin ? null : "pIcon01";
+                } else {
+                    nodes[i].iconSkin = "icon0" + (iconCount++);
+                }
+            }
+            zTree.updateNode(nodes[i]);
+        }
+    }
+
+    function expandNode(e) {
+        var zTree = $.fn.zTree.getZTreeObj("ztreeDemo"),
+            type = e.data.type,
+            nodes = zTree.getSelectedNodes();
+        if (type.indexOf("All") < 0 && nodes.length == 0) {
+            alert("请先选择一个父节点");
+        }
+
+        if (type == "expandAll") {
+            zTree.expandAll(true);
+        } else if (type == "collapseAll") {
+            zTree.expandAll(false);
+        } else {
+            var callbackFlag = $("#callbackTrigger").attr("checked");
+            for (var i = 0, l = nodes.length; i < l; i++) {
+                zTree.setting.view.fontCss = {};
+                if (type == "expand") {
+                    zTree.expandNode(nodes[i], true, null, null, callbackFlag);
+                } else if (type == "collapse") {
+                    zTree.expandNode(nodes[i], false, null, null, callbackFlag);
+                } else if (type == "toggle") {
+                    zTree.expandNode(nodes[i], null, null, null, callbackFlag);
+                } else if (type == "expandSon") {
+                    zTree.expandNode(nodes[i], true, true, null, callbackFlag);
+                } else if (type == "collapseSon") {
+                    zTree.expandNode(nodes[i], false, true, null, callbackFlag);
+                }
+            }
+        }
+    }
+
+    function getChecked(e) {
+        var zTree = $.fn.zTree.getZTreeObj("ztreeDemo"),
+            checkCount = zTree.getCheckedNodes(true).length,
+            nocheckCount = zTree.getCheckedNodes(false).length,
+            changeCount = zTree.getChangeCheckedNodes().length,
+            selectedNodes = zTree.getCheckedNodes();
+        console.log(checkCount, nocheckCount, changeCount, selectedNodes)
+    }
+
+    $("#refreshNode").bind("click", {type: "refresh", silent: false}, refreshNode);
+    $("#refreshNodeSilent").bind("click", {type: "refresh", silent: true}, refreshNode);
+    $("#addNode").bind("click", {type: "add", silent: false}, refreshNode);
+    $("#addNodeSilent").bind("click", {type: "add", silent: true}, refreshNode);
+    $("#rename").bind("click", {type: "rename"}, updateNode);
+    //$("#changeIcon").bind("click", {type: "icon"}, updateNode);
+    $("#toggleBtn").bind("click", {type: "toggle"}, expandNode);
+    $("#expandSonBtn").bind("click", {type: "expandSon"}, expandNode);
+    $("#collapseSonBtn").bind("click", {type: "collapseSon"}, expandNode);
+    $("#expandAllBtn").bind("click", {type: "expandAll"}, expandNode);
+    $("#collapseAllBtn").bind("click", {type: "collapseAll"}, expandNode);
+    $("#getChecked").bind("click", {type: "getChecked"}, getChecked);
+</script>
+</body>
+</html>
